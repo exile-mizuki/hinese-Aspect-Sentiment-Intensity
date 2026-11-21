@@ -5,10 +5,17 @@ SIGHAN 2024 DimABSA 课程设计：输入中文餐饮评论及目标方面，预
 ## 从哪里开始看
 
 1. `web/` 与 `src/web_demo.py`：本地交互演示，支持多方面输入、V/A 可视化和结果导出。网页截图在 `research/web_screenshots/`。
-2. `research/release/`：正式模型冻结记录、实验登记表。正式模型为 Chinese BERT WWM Ext `marked_l1` seed 42，训练 3 轮。
-3. `research/experiments/`：各轮折外汇总指标。比较时请区分单种子、多种子、三折 Group CV 与官方开发集。
-4. `research/docs/`、`research/project_results/`：数据审计、优化过程、报告图表。
-5. `research/scripts/`：研究实验脚本；源码保留历史方法，当前演示不需要全部运行。
+2. `docs/`：GitHub Pages 静态预览，展示本地正式模型已保存的三条示例结果。它不会对新评论实时预测，页面有明确提示。
+3. `research/release/`：正式模型冻结记录、实验登记表。正式模型为 Chinese BERT WWM Ext `marked_l1` seed 42，训练 3 轮。
+4. `research/experiments/`：各轮折外汇总指标。比较时请区分单种子、多种子、三折 Group CV 与官方开发集。
+5. `research/docs/`、`research/project_results/`：数据审计、优化过程、报告图表。
+6. `research/scripts/`：研究实验脚本；源码保留历史方法，当前演示不需要全部运行。
+
+## 在线预览（GitHub Pages）
+
+把本 ZIP **解压后的文件内容**提交到仓库根目录，进入 GitHub 仓库 Settings → Pages → Build and deployment，选择 Deploy from a branch；Branch 设 `main`，目录设 `/docs`，保存。等页面部署完成后使用 Settings → Pages 显示的地址访问。
+
+Pages 仅演示界面与三条已保存的真实模型示例；修改示例文字后页面会提示无法实时推理。完整任意输入的预测仍须本地 Python 模型服务。
 
 ## 为什么没有数据和权重
 

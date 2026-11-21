@@ -1,0 +1,214 @@
+{
+  "metadata": {
+    "current_model": {
+      "id": "marked_l1_seed42_epoch3",
+      "label": "正式模型 · BERT 方面标记 · Epoch 3",
+      "epoch": 3,
+      "seed": 42,
+      "train_rows": 7476,
+      "release_method": "marked_l1",
+      "release_version": "release_v1",
+      "checkpoint_sha256": "f5f6d521aaa97635c1af0520af8bf6c61c586418ab4c4bffffba0819b8a96158"
+    },
+    "candidate_model": {
+      "id": "arousal_mse_aux",
+      "label": "实验候选 · A辅助分类",
+      "accepted": false
+    },
+    "guide": {
+      "score_min": 1,
+      "score_max": 9,
+      "max_aspects": 8,
+      "max_tokens": 128,
+      "task": "指定方面的 V/A 回归预测，方面词由用户提供。",
+      "report_baseline": "当前基线为完整训练集训练 3 轮的正式 marked_l1 模型；历史候选对比仅供探索性展示。",
+      "privacy": "评论仅发给本机服务；服务不保存评论，也不发送到外部平台。",
+      "evaluation": "既往查看过测试集，测试比较属于探索性结果。"
+    },
+    "token": "static-preview"
+  },
+  "samples": [
+    {
+      "text": "汤非常难喝，但是服务很好。",
+      "aspects": [
+        "汤",
+        "服务"
+      ],
+      "compare": true,
+      "created_at": "2026-11-21T00:59:42.605109+00:00",
+      "elapsed_ms": 955,
+      "models": {
+        "current": {
+          "id": "marked_l1_seed42_epoch3",
+          "label": "正式模型 · BERT 方面标记 · Epoch 3",
+          "epoch": 3,
+          "seed": 42,
+          "train_rows": 7476,
+          "release_method": "marked_l1",
+          "release_version": "release_v1",
+          "checkpoint_sha256": "f5f6d521aaa97635c1af0520af8bf6c61c586418ab4c4bffffba0819b8a96158"
+        },
+        "candidate": {
+          "id": "arousal_mse_aux",
+          "label": "实验候选 · A辅助分类",
+          "accepted": false
+        }
+      },
+      "predictions": [
+        {
+          "aspect": "汤",
+          "V": 3.02,
+          "A": 6.53,
+          "candidate_V": 3.13,
+          "candidate_A": 6.23,
+          "delta_V": 0.11,
+          "delta_A": -0.3
+        },
+        {
+          "aspect": "服务",
+          "V": 6.44,
+          "A": 6.23,
+          "candidate_V": 6.34,
+          "candidate_A": 6.09,
+          "delta_V": -0.1,
+          "delta_A": -0.14
+        }
+      ],
+      "warnings": [],
+      "rule_cues": [
+        {
+          "tag": "转折线索",
+          "start": 6,
+          "end": 8,
+          "text": "但是"
+        },
+        {
+          "tag": "程度强调线索",
+          "start": 1,
+          "end": 3,
+          "text": "非常"
+        }
+      ],
+      "notes": [
+        "V/A 是 1–9 的回归分数，不是概率或置信度。",
+        "词语高亮只表示原文位置；规则线索不是模型解释。",
+        "演示句没有人工真值，不能据此评价准确率。"
+      ],
+      "source": "saved_local_model_prediction"
+    },
+    {
+      "text": "这次的牛肉面非常好吃，汤也很鲜美。",
+      "aspects": [
+        "牛肉面",
+        "汤"
+      ],
+      "compare": true,
+      "created_at": "2026-11-21T00:59:42.885244+00:00",
+      "elapsed_ms": 265,
+      "models": {
+        "current": {
+          "id": "marked_l1_seed42_epoch3",
+          "label": "正式模型 · BERT 方面标记 · Epoch 3",
+          "epoch": 3,
+          "seed": 42,
+          "train_rows": 7476,
+          "release_method": "marked_l1",
+          "release_version": "release_v1",
+          "checkpoint_sha256": "f5f6d521aaa97635c1af0520af8bf6c61c586418ab4c4bffffba0819b8a96158"
+        },
+        "candidate": {
+          "id": "arousal_mse_aux",
+          "label": "实验候选 · A辅助分类",
+          "accepted": false
+        }
+      },
+      "predictions": [
+        {
+          "aspect": "牛肉面",
+          "V": 6.96,
+          "A": 6.83,
+          "candidate_V": 7.01,
+          "candidate_A": 6.89,
+          "delta_V": 0.05,
+          "delta_A": 0.06
+        },
+        {
+          "aspect": "汤",
+          "V": 6.69,
+          "A": 6.5,
+          "candidate_V": 6.62,
+          "candidate_A": 6.34,
+          "delta_V": -0.07,
+          "delta_A": -0.16
+        }
+      ],
+      "warnings": [],
+      "rule_cues": [
+        {
+          "tag": "程度强调线索",
+          "start": 6,
+          "end": 8,
+          "text": "非常"
+        }
+      ],
+      "notes": [
+        "V/A 是 1–9 的回归分数，不是概率或置信度。",
+        "词语高亮只表示原文位置；规则线索不是模型解释。",
+        "演示句没有人工真值，不能据此评价准确率。"
+      ],
+      "source": "saved_local_model_prediction"
+    },
+    {
+      "text": "等了很久才上菜，服务让我有点失望。",
+      "aspects": [
+        "服务"
+      ],
+      "compare": true,
+      "created_at": "2026-11-21T00:59:43.032777+00:00",
+      "elapsed_ms": 131,
+      "models": {
+        "current": {
+          "id": "marked_l1_seed42_epoch3",
+          "label": "正式模型 · BERT 方面标记 · Epoch 3",
+          "epoch": 3,
+          "seed": 42,
+          "train_rows": 7476,
+          "release_method": "marked_l1",
+          "release_version": "release_v1",
+          "checkpoint_sha256": "f5f6d521aaa97635c1af0520af8bf6c61c586418ab4c4bffffba0819b8a96158"
+        },
+        "candidate": {
+          "id": "arousal_mse_aux",
+          "label": "实验候选 · A辅助分类",
+          "accepted": false
+        }
+      },
+      "predictions": [
+        {
+          "aspect": "服务",
+          "V": 3.7,
+          "A": 5.32,
+          "candidate_V": 3.71,
+          "candidate_A": 5.31,
+          "delta_V": 0.01,
+          "delta_A": -0.01
+        }
+      ],
+      "warnings": [],
+      "rule_cues": [
+        {
+          "tag": "隐含评价候选",
+          "start": 0,
+          "end": 2,
+          "text": "等了"
+        }
+      ],
+      "notes": [
+        "V/A 是 1–9 的回归分数，不是概率或置信度。",
+        "词语高亮只表示原文位置；规则线索不是模型解释。",
+        "演示句没有人工真值，不能据此评价准确率。"
+      ],
+      "source": "saved_local_model_prediction"
+    }
+  ]
+}
