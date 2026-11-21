@@ -1,0 +1,17 @@
+{
+  "project": "SIGHAN2024-dimABSA",
+  "model_method": "marked_l1",
+  "seed": 42,
+  "epochs": 3,
+  "train_rows": 7476,
+  "input_variant": "marked",
+  "max_length": 128,
+  "checkpoint": "E:\\作业\\自然语言处理\\课程设计\\optimization_v2\\final_model\\marked_l1\\seed_42\\model.pt",
+  "checkpoint_sha256": "F5F6D521AAA97635C1AF0520AF8BF6C61C586418AB4C4BFFFFBA0819B8A96158",
+  "encoder_config_sha256": "DB315A16B269048898F1D747AE534AF3E4B69F41A5BABAB916D55AF714C36C9E",
+  "cv_manifest_sha256": "B3EB9A5AE8021C76943B9F9652FB1D853D77E71C308BF72191FBF5920E91052E",
+  "status": "frozen_for_course_delivery",
+  "official_test_consulted_historically": true,
+  "official_test_accessed_during_freeze": false,
+  "checkpoint_relative_path": "optimization_v2/final_model/marked_l1/seed_42/model.pt"
+}

@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/
+demo_tokenizer/
+results/
+checkpoints/
+模型缓存/
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.zip
+*.tmp
+*.log
+*truth.txt

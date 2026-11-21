@@ -1,0 +1,28 @@
+{
+  "sources": [
+    {
+      "file": "SIGHAN2024_dimABSA_TrainingSet1_Simplified.json",
+      "raw_sentence_records": 3000,
+      "sha256": "982c3c49084bad508da7e0d954bd92369a164643c3008883b7d88d461749bae1"
+    },
+    {
+      "file": "SIGHAN2024_dimABSA_TrainingSet2_Simplified.json",
+      "raw_sentence_records": 3050,
+      "sha256": "7137b8591595cc2860e4c8baa8a9ae574555f67dd41d0f21e9f90702ccfec6f4"
+    }
+  ],
+  "validation": {
+    "input_file": "SIGHAN2024_dimABSA_Validation_Task1_Simplified.txt",
+    "input_sha256": "89e4f9429c2f092e6a2b67b26671b86aa3617b828ce8b8e610dbfbd002f34cbe",
+    "truth_file": "SIGHAN2024_dimABSA_Validation_Task1_Simplified_truth.txt",
+    "truth_sha256": "2ae5d39f11230f18338a244cbad765bf8ac903a459310a6534ffbc64836c9c7b"
+  },
+  "testing": {
+    "input_file": "SIGHAN2024_dimABSA_Testing_Task1_Simplified.txt",
+    "input_sha256": "6607e4a2f1e1baa87feea1689d814f082d8e5bf30d6f2661a92f4d6c5e20cb16",
+    "truth_file": "SIGHAN2024_dimABSA_Testing_Task1_Simplified_truth.txt",
+    "truth_sha256": "a38dedc7d4e1926eec79087538003974bd7250b7cd55434a1bf44ce8b7b98859"
+  },
+  "pipeline_note": "Training rows collapse all opinion-level intensity records sharing id,text,aspect by mean. Original data are untouched.",
+  "audited_at_UTC": "2026-11-19T22:46:02.297493+00:00"
+}

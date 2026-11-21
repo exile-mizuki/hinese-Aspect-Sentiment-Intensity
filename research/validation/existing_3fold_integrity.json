@@ -1,0 +1,26 @@
+[
+  {
+    "fold":0,
+    "train_n":4842,
+    "heldout_n":2634,
+    "shared_reviews":0,
+    "shared_exact_texts":0,
+    "shared_normalized_texts":0
+  },
+  {
+    "fold":1,
+    "train_n":5054,
+    "heldout_n":2422,
+    "shared_reviews":0,
+    "shared_exact_texts":0,
+    "shared_normalized_texts":0
+  },
+  {
+    "fold":2,
+    "train_n":5056,
+    "heldout_n":2420,
+    "shared_reviews":0,
+    "shared_exact_texts":0,
+    "shared_normalized_texts":0
+  }
+]

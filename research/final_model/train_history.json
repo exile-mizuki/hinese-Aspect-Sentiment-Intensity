@@ -1,0 +1,36 @@
+{
+  "method": "marked_l1",
+  "seed": 42,
+  "epochs": 3,
+  "batch_size": 8,
+  "lr": 2e-05,
+  "max_length": 128,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.40883031273793896,
+      "seconds": 67.14
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.30365370629368266,
+      "seconds": 67.34
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.26380024428607435,
+      "seconds": 65.94
+    }
+  ],
+  "train_bin_counts": [
+    471.0,
+    5774.0,
+    1231.0
+  ],
+  "trained_only_with": "Training JSON",
+  "model_path": "E:\\作业\\自然语言处理\\课程设计\\模型缓存\\chinese-bert-wwm-ext",
+  "training_sources_sha256": {
+    "SIGHAN2024_dimABSA_TrainingSet1_Simplified.json": "982c3c49084bad508da7e0d954bd92369a164643c3008883b7d88d461749bae1",
+    "SIGHAN2024_dimABSA_TrainingSet2_Simplified.json": "7137b8591595cc2860e4c8baa8a9ae574555f67dd41d0f21e9f90702ccfec6f4"
+  }
+}

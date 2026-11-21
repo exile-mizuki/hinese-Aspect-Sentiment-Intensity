@@ -1,0 +1,185 @@
+{
+  "summary": [
+    {
+      "split": "train",
+      "sentence_ids": 6050,
+      "unique_review_ids": 1752,
+      "aspect_instances": 7476,
+      "unique_aspects": 3424,
+      "null_aspects": 150,
+      "blank_sentences": 0,
+      "blank_aspects": 0,
+      "missing_labels": 0,
+      "invalid_V": 0,
+      "invalid_A": 0,
+      "duplicate_id_aspect": 0,
+      "duplicate_text_aspect": 27,
+      "multi_aspect_sentences": 1180,
+      "multi_aspect_instances": 2606,
+      "A_ge_6_5": 1231,
+      "A_ge_7_5": 78
+    },
+    {
+      "split": "dev",
+      "sentence_ids": 100,
+      "unique_review_ids": 34,
+      "aspect_instances": 115,
+      "unique_aspects": 104,
+      "null_aspects": 0,
+      "blank_sentences": 0,
+      "blank_aspects": 0,
+      "missing_labels": 0,
+      "invalid_V": 0,
+      "invalid_A": 0,
+      "duplicate_id_aspect": 0,
+      "duplicate_text_aspect": 0,
+      "multi_aspect_sentences": 15,
+      "multi_aspect_instances": 30,
+      "A_ge_6_5": 31,
+      "A_ge_7_5": 2
+    },
+    {
+      "split": "test",
+      "sentence_ids": 2000,
+      "unique_review_ids": 895,
+      "aspect_instances": 2658,
+      "unique_aspects": 1526,
+      "null_aspects": 0,
+      "blank_sentences": 0,
+      "blank_aspects": 0,
+      "missing_labels": 0,
+      "invalid_V": 0,
+      "invalid_A": 0,
+      "duplicate_id_aspect": 0,
+      "duplicate_text_aspect": 0,
+      "multi_aspect_sentences": 540,
+      "multi_aspect_instances": 1198,
+      "A_ge_6_5": 407,
+      "A_ge_7_5": 19
+    }
+  ],
+  "overlaps": [
+    {
+      "left": "train",
+      "right": "dev",
+      "same_sentence_IDs": 0,
+      "shared_review_IDs": 13,
+      "left_instances_in_shared_reviews": 61,
+      "right_instances_in_shared_reviews": 53,
+      "shared_exact_texts": 1,
+      "shared_normalized_texts": 1,
+      "shared_exact_text_aspects": 1,
+      "left_instances_same_exact_text": 2,
+      "right_instances_same_exact_text": 1,
+      "left_instances_same_normalized_text": 2,
+      "right_instances_same_normalized_text": 1
+    },
+    {
+      "left": "train",
+      "right": "test",
+      "same_sentence_IDs": 0,
+      "shared_review_IDs": 400,
+      "left_instances_in_shared_reviews": 2436,
+      "right_instances_in_shared_reviews": 989,
+      "shared_exact_texts": 4,
+      "shared_normalized_texts": 4,
+      "shared_exact_text_aspects": 4,
+      "left_instances_same_exact_text": 5,
+      "right_instances_same_exact_text": 4,
+      "left_instances_same_normalized_text": 5,
+      "right_instances_same_normalized_text": 4
+    },
+    {
+      "left": "dev",
+      "right": "test",
+      "same_sentence_IDs": 0,
+      "shared_review_IDs": 6,
+      "left_instances_in_shared_reviews": 21,
+      "right_instances_in_shared_reviews": 16,
+      "shared_exact_texts": 1,
+      "shared_normalized_texts": 1,
+      "shared_exact_text_aspects": 1,
+      "left_instances_same_exact_text": 1,
+      "right_instances_same_exact_text": 1,
+      "left_instances_same_normalized_text": 1,
+      "right_instances_same_normalized_text": 1
+    }
+  ],
+  "cv_integrity": [
+    {
+      "fold": 0,
+      "train_n": 4842,
+      "heldout_n": 2634,
+      "shared_reviews": 0,
+      "shared_exact_texts": 0,
+      "shared_normalized_texts": 0
+    },
+    {
+      "fold": 1,
+      "train_n": 5054,
+      "heldout_n": 2422,
+      "shared_reviews": 0,
+      "shared_exact_texts": 0,
+      "shared_normalized_texts": 0
+    },
+    {
+      "fold": 2,
+      "train_n": 5056,
+      "heldout_n": 2420,
+      "shared_reviews": 0,
+      "shared_exact_texts": 0,
+      "shared_normalized_texts": 0
+    }
+  ],
+  "metrics": [
+    {
+      "split": "oof_train",
+      "method": "baseline",
+      "n": 7476,
+      "V_MAE": 0.286364923310148,
+      "A_MAE": 0.3274065899768147,
+      "mean_MAE": 0.3068857566434814,
+      "high_A_MAE": 0.4288092336853506
+    },
+    {
+      "split": "oof_train",
+      "method": "candidate",
+      "n": 7476,
+      "V_MAE": 0.28848125111467804,
+      "A_MAE": 0.32590422685928305,
+      "mean_MAE": 0.3071927389869806,
+      "high_A_MAE": 0.4287117519631735
+    },
+    {
+      "split": "dev",
+      "method": "baseline",
+      "n": 115,
+      "V_MAE": 0.28469565217391307,
+      "A_MAE": 0.3285217391304348,
+      "mean_MAE": 0.30660869565217397,
+      "high_A_MAE": 0.34838709677419355
+    },
+    {
+      "split": "dev",
+      "method": "candidate",
+      "n": 115,
+      "V_MAE": 0.29208695652173916,
+      "A_MAE": 0.3438260869565217,
+      "mean_MAE": 0.3179565217391304,
+      "high_A_MAE": 0.35483870967741926
+    }
+  ],
+  "findings": {
+    "raw_annotations": 8523,
+    "aggregated_train_instances": 7476,
+    "multi_opinion_groups": 914,
+    "multi_opinion_groups_with_different_ratings": 800,
+    "duplicate_text_aspect_groups_across_training_IDs": 22,
+    "duplicate_text_aspect_groups_label_differences": 22,
+    "cross_split_near_duplicate_candidates": 0,
+    "review_count_existing": 24,
+    "review_count_new_oof": 24,
+    "source_original_untouched": true,
+    "warning": "Official test labels and scores were examined in earlier experiments. No fresh blind-test performance claim permitted."
+  }
+}

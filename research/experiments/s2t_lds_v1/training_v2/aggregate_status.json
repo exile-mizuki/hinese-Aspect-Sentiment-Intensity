@@ -1,0 +1,13 @@
+{
+  "training_source": "only local Training JSON",
+  "official_dev_test_used_for_new_training": false,
+  "status": "training runs aggregated; still need human error audit and independent development gate",
+  "methods": [
+    "repeat_control"
+  ],
+  "seeds": [
+    42
+  ],
+  "folds": 3,
+  "warning": "Never compare against old CV if fold assignments and training seeds differ; rerun matched baseline."
+}

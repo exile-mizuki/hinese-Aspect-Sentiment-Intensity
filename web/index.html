@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#fbfaf9" name="theme-color"/>
+<meta content="观感 · 中文方面情感强度预测平台。探索评论里不同方面的愉悦度与情绪唤醒度，查看真实实验与数据洞察。" name="description"/>
+<title>观感 · 情绪的科学与艺术 · V5</title>
+<link href="./style.css" rel="stylesheet"/>
+<script defer="" src="./app.js"></script>
+</head>
+<body>
+<div class="app-shell">
+<!-- V4.4 navigation is a product-style sticky top header. Existing route, keyboard and menu handlers remain live. -->
+<div class="sidebar-backdrop" hidden id="sidebar-backdrop"></div>
+<div class="main-area">
+<header class="topbar" id="sidebar">
+  <div class="v44-top-inner">
+    <a class="side-brand" aria-label="观感首页" href="#/overview"><span aria-hidden="true" class="brand-glyph">观</span><span class="brand-text">观感<small>ASPECT INTELLIGENCE</small></span></a>
+    <nav class="side-nav" id="side-nav" aria-label="主导航">
+      <a data-nav="overview" href="#/overview"><span class="nav-icon" aria-hidden="true">◧</span>总览</a>
+      <a data-nav="predict" href="#/predict"><span class="nav-icon" aria-hidden="true">◎</span>情绪预测</a>
+      <a data-nav="data" href="#/data"><span class="nav-icon" aria-hidden="true">▥</span>数据洞察</a>
+      <a data-nav="experiments" href="#/experiments"><span class="nav-icon" aria-hidden="true">⌁</span>模型实验</a>
+      <a data-nav="story" href="#/story"><span class="nav-icon" aria-hidden="true">▤</span>研究展示</a>
+      <a data-nav="about" href="#/about"><span class="nav-icon" aria-hidden="true">◇</span>项目与复现</a>
+    </nav>
+    <div class="top-actions"><span class="top-model"><span class="live-dot" id="top-dot"></span><span id="top-status">正在连接本地模型</span></span><button class="small-action" id="go-story" type="button">演示视图 ↗</button><button aria-expanded="false" aria-controls="side-nav" aria-label="打开导航菜单" class="menu-button" id="menu-toggle" type="button">☰</button></div>
+  </div>
+  <div hidden aria-hidden="true"><span id="side-dot"></span><span id="side-state-title"></span><span id="side-state-desc"></span><span id="page-breadcrumb"></span></div>
+</header>
+<main id="main-content">
+<!-- OVERVIEW -->
+<section aria-labelledby="overview-title" class="page overview" data-page="overview">
+<div class="deck-hero fernway-hero">
+<div aria-hidden="true" class="mesh-atmosphere"><span class="mesh-blob blob-one"></span><span class="mesh-blob blob-two"></span><span class="mesh-blob blob-three"></span><span class="mesh-blob blob-four"></span></div>
+<div class="hero-navline hero-seq hero-seq-nav"><span class="hero-pill hero-seq-item"><span class="hero-pill-dot"></span> 中文方面情感 · 本地模型</span><span class="hero-edition hero-seq-item">GUANGAN / ASPECT INTELLIGENCE</span></div>
+<div class="fernway-inner">
+<div class="fernway-copy">
+<p class="deck-eyebrow hero-seq-item">NATURAL LANGUAGE PROCESSING · DIMENSIONAL SENTIMENT</p>
+<h1 id="overview-title" class="hero-title hero-seq-item"><span class="hero-title-line"><span class="hero-title-ink">读懂评论里的</span></span><span class="hero-title-line"><span class="hero-title-ink hero-title-accent">每一种情绪。</span></span></h1>
+<p class="deck-description hero-description hero-seq-item">从整句走向具体方面。用 Valence × Arousal 双维度，观察服务与价格的不同情绪坐标。</p>
+<div class="deck-buttons hero-seq hero-seq-buttons"><a class="action-primary hero-seq-item" href="#/predict">开始分析 <span>↗</span></a><a class="action-ghost hero-seq-item" href="#/experiments">查看真实实验 <span>→</span></a></div>
+<div class="hero-confidence hero-seq-item"><span class="live-dot ready"></span>正式 BERT · Epoch 3 <span class="hero-divider"></span> 本地离线推理</div>
+</div>
+<div class="fernway-art v5-art hero-visual" aria-label="方面情绪坐标静态示例：服务 V 6.62 A 6.43，价格 V 4.23 A 5.08；非当前用户输入">
+ <div class="v5-art-aura hero-visual-layer hero-aura" aria-hidden="true"></div>
+ <svg class="v5-art-orbits hero-visual-layer hero-orbits" viewBox="0 0 660 560" aria-hidden="true" preserveAspectRatio="xMidYMid meet"><defs>
+  <linearGradient id="v5OrbitStroke" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a48dff"/><stop offset=".5" stop-color="#70d6d6"/><stop offset="1" stop-color="#ffb9aa"/></linearGradient>
+ </defs><ellipse cx="330" cy="284" rx="283" ry="173" transform="rotate(-28 330 284)" fill="none" stroke="url(#v5OrbitStroke)" stroke-width="1.3" opacity=".75"/><ellipse cx="334" cy="280" rx="238" ry="244" transform="rotate(31 334 280)" fill="none" stroke="#ffffff" stroke-width="1.3" opacity=".82"/><circle cx="100" cy="400" r="5" fill="#8fe5d0"/><circle cx="573" cy="117" r="5" fill="#b49dff"/></svg>
+ <div class="v5-visual-blob hero-visual-layer hero-blob" aria-hidden="true"><div class="v5-visual-blob-inner"></div></div>
+ <div class="v5-orbit-panel float-panel hero-visual-layer hero-panel hero-panel-main">
+  <div class="v5-orbit-head"><span class="v5-orbit-icon">✧</span><div><b>情绪坐标观测</b><small>VALENCE × AROUSAL</small></div><span class="v5-orbit-live">示例 / 02</span></div>
+  <svg class="v5-scatter hero-chart" viewBox="0 0 520 310" role="img" aria-label="示例数据：服务 V6.62 A6.43；价格 V4.23 A5.08">
+   <defs><linearGradient id="v5Line" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#57cfc2"/><stop offset="1" stop-color="#7969ed"/></linearGradient></defs>
+   <g stroke="#dcddec" stroke-width="1" fill="none"><path d="M42 32V264H478" stroke="#b7b8d2" stroke-width="1.4"/><path d="M42 90H478 M42 148H478 M42 206H478 M151 32V264 M260 32V264 M369 32V264" opacity=".68"/><path d="M260 32V264 M42 148H478" stroke-dasharray="5 6" stroke="#b8acd9" stroke-width="1.5"/></g>
+   <path d="M217 146 C256 108 302 92 348 106" fill="none" stroke="url(#v5Line)" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 8" opacity=".85"/>
+   <circle cx="217" cy="146" r="19" fill="#39bbb5" opacity=".13"/><circle cx="217" cy="146" r="8" fill="#39bdb2" stroke="white" stroke-width="4"/>
+   <circle cx="348" cy="106" r="21" fill="#7767ed" opacity=".14"/><circle cx="348" cy="106" r="9" fill="#7767ed" stroke="white" stroke-width="4"/>
+   <g fill="#272c4b" font-size="16" font-weight="700"><text x="172" y="127">价格</text><text x="366" y="94">服务</text></g>
+   <g fill="#86899f" font-size="11" font-weight="600"><text x="43" y="21">A / 情绪唤醒 ↑</text><text x="478" y="289" text-anchor="end">V / 情绪效价 →</text><text x="42" y="282">1</text><text x="260" y="282" text-anchor="middle">5</text><text x="478" y="282" text-anchor="end">9</text></g>
+  </svg>
+  <div class="v5-orbit-bottom"><span><i class="v5-point-mint"></i>价格 <b>4.23 / 5.08</b></span><span><i class="v5-point-violet"></i>服务 <b>6.62 / 6.43</b></span></div>
+ </div>
+ <div class="v5-art-fact v5-fact-one float-panel hero-visual-layer hero-panel hero-panel-fact"><span class="v5-fact-symbol">✓</span><div><strong>正式模型 · 已核验</strong><small>Seed 42 / Epoch 3</small></div></div>
+ <div class="v5-art-fact v5-fact-two float-panel hero-visual-layer hero-panel hero-panel-score"><span class="v5-fact-caption">官方 Dev · 综合 MAE</span><div><strong>0.3067</strong><small>↓ 越低越好</small></div></div>
+ <div class="v5-side-caption hero-visual-layer hero-side-caption" aria-hidden="true">EMOTION IS MULTIDIMENSIONAL <span>✳</span> 01 / OBSERVATORY</div>
+</div>
+</div>
+<div class="hero-corner-note">静态示例用于展示界面；真实输入请前往情绪预测</div>
+<svg class="v44-hero-curve" aria-hidden="true" viewBox="0 0 1440 160" preserveAspectRatio="none"><path d="M0 48 C350 144 1090 144 1440 48 L1440 160 L0 160 Z" fill="#FBFAF8"/></svg>
+</div>
+<div class="section-caption"><span>RESEARCH, AT A GLANCE</span><p>只展示已经审核过的真实指标</p></div>
+<div class="insight-grid upgraded-insights">
+<article class="insight-card"><div class="insight-top"><span>训练方面实例</span><span class="metric-icon">◫</span></div><strong class="insight-number">7,476</strong><div class="proportion-meter"><span style="width:87.774%"></span><span style="width:12.226%"></span></div><div class="insight-footer"><span>6,562 单观点</span><span>914 多观点</span></div></article>
+<article class="insight-card"><div class="insight-top"><span>原始观点标注</span><span class="metric-icon">◈</span></div><strong class="insight-number">8,523</strong><div aria-label="聚合方面 7476 条，占原始标注 87.72%；合并多余记录 1047 条，占 12.28%" class="proportion-meter annotation-proportion"><span style="width:87.72%"></span><span style="width:12.28%"></span></div><div class="insight-footer"><span>6,050 句餐饮评论</span><span>合并多余记录 1,047</span></div></article>
+<article class="insight-card"><div class="insight-top"><span>正式模型 · Dev MAE</span><span class="metric-icon">↘</span></div><strong class="insight-number">0.3067</strong><div class="metric-comparisons"><div><span>正式 BERT</span><i style="width:33.48%"></i></div><div><span>Opinion-Aware</span><i style="width:57.39%"></i></div><div><span>A-MSE</span><i style="width:81.31%"></i></div></div><div class="insight-footer"><span>Dev MAE 局部标尺 0.300—0.320</span></div></article>
+</div>
+<section class="v5-interlude" aria-label="情绪分析维度与模型标识">
+  <div class="v5-interlude-track" aria-label="V 与 A 情绪分析术语连续展示">
+    <div class="v51-ticker-run" aria-hidden="true">
+      <div class="v51-ticker-group"><span class="v51-ticker-word">VALENCE</span><i class="v51-ticker-dot" aria-hidden="true"></i><span class="v51-ticker-word">AROUSAL</span><span class="v51-ticker-spark" aria-hidden="true">✳</span><span class="v51-ticker-word">ASPECT</span><i class="v51-ticker-dot" aria-hidden="true"></i><span class="v51-ticker-word">INFERENCE</span><i class="v51-ticker-dot" aria-hidden="true"></i><span class="v51-ticker-word">BERT</span><span class="v51-ticker-spark" aria-hidden="true">✳</span><span class="v51-ticker-word">SENTIMENT</span><i class="v51-ticker-dot" aria-hidden="true"></i></div>
+      <div class="v51-ticker-group"><span class="v51-ticker-word">VALENCE</span><i class="v51-ticker-dot" aria-hidden="true"></i><span class="v51-ticker-word">AROUSAL</span><span class="v51-ticker-spark" aria-hidden="true">✳</span><span class="v51-ticker-word">ASPECT</span><i class="v51-ticker-dot" aria-hidden="true"></i><span class="v51-ticker-word">INFERENCE</span><i class="v51-ticker-dot" aria-hidden="true"></i><span class="v51-ticker-word">BERT</span><span class="v51-ticker-spark" aria-hidden="true">✳</span><span class="v51-ticker-word">SENTIMENT</span><i class="v51-ticker-dot" aria-hidden="true"></i></div>
+    </div>
+  </div>
+  <div class="v5-interlude-aside"><span class="v5-interlude-mark" aria-hidden="true">✳</span><strong>同一句话，不止一种情绪。</strong><small>01 — 09 / 两个连续维度，多个观点目标</small></div>
+</section>
+<section aria-labelledby="workflow-title" class="workflow-showcase">
+<div class="section-caption"><span>PRODUCT WORKFLOW / 01—03</span><p>可交互的产品操作预览</p></div>
+<div class="workflow-heading"><h2 id="workflow-title">从评论，到可以看见的情绪。</h2><p>选择步骤，右侧面板会展示相应的工作流程。点击正式分析即可进入真实模型。</p></div>
+<div class="workflow-grid">
+<div aria-label="工作流程步骤" class="workflow-selector" role="group">
+<button aria-pressed="true" class="workflow-step active" data-workflow-step="0" type="button"><span class="workflow-step-no">01</span><span><strong>输入评论</strong><small>用自然语言描述真实体验</small></span><span class="step-arrow">↗</span></button>
+<button aria-pressed="false" class="workflow-step" data-workflow-step="1" type="button"><span class="workflow-step-no">02</span><span><strong>指定方面</strong><small>从同一句中区分不同评价目标</small></span><span class="step-arrow">↗</span></button>
+<button aria-pressed="false" class="workflow-step" data-workflow-step="2" type="button"><span class="workflow-step-no">03</span><span><strong>查看结果</strong><small>在 V × A 坐标中联动分析</small></span><span class="step-arrow">↗</span></button>
+</div>
+<div class="workflow-preview-wrap">
+<div class="workflow-preview active" data-workflow-preview="0"><div class="mock-window-top"><span class="mock-dots">● ● ●</span><span>COMMENT INPUT</span><span>01 / 03</span></div><div class="mock-form"><div class="mock-caption">评论原文</div><div class="mock-textarea">这家店的<span>服务非常好</span>，但<span class="mock-text-mint">价格有点贵</span>。</div><div class="mock-form-bottom"><span>17 / 500 字</span><span class="mock-tag">例句 · 已验证</span></div></div></div>
+<div class="workflow-preview" data-workflow-preview="1" hidden=""><div class="mock-window-top"><span class="mock-dots">● ● ●</span><span>ASPECT DETECTION</span><span>02 / 03</span></div><div class="mock-aspects"><p>同一句评论，两个评价目标</p><div class="mock-aspect-pair"><div><span class="mock-symbol purple">◎</span><strong>服务</strong><small>正面表达</small></div><div><span class="mock-symbol mint">◎</span><strong>价格</strong><small>负面表达</small></div></div><div class="mock-context">方面词由用户提供，模型不会自动抽取方面</div></div></div>
+<div class="workflow-preview" data-workflow-preview="2" hidden=""><div class="mock-window-top"><span class="mock-dots">● ● ●</span><span>VALENCE × AROUSAL</span><span>03 / 03</span></div><div class="mock-results"><div><span>服务</span><b>V 6.62</b><i class="mini-chart purple-chart" style="--score:70.25%"></i><b>A 6.43</b></div><div><span>价格</span><b>V 4.23</b><i class="mini-chart mint-chart" style="--score:40.38%"></i><b>A 5.08</b></div><p>上述值来自冻结模型的已核验 CPU 示例，不是实时计算</p></div></div>
+</div>
+</div>
+</section>
+<section aria-labelledby="v41-feature-title" class="v41-gradient-feature">
+<div aria-hidden="true" class="v41-light-field">
+<div class="v41-light v41-light-a"></div>
+<div class="v41-light v41-light-b"></div>
+<div class="v41-light v41-light-c"></div>
+<svg aria-hidden="true" class="v41-wave" preserveaspectratio="none" viewbox="0 0 1200 440">
+<path d="M-90 310 C190 60 360 490 650 170 S1050 -25 1350 115"></path>
+<path d="M-100 370 C260 125 390 520 710 260 S1100 60 1320 210"></path>
+</svg>
+</div>
+<svg class="v5-feature-orbit" viewBox="0 0 900 420" preserveAspectRatio="none" aria-hidden="true"><path d="M-80 350 C200 20 390 490 680 130 S930 50 1040 300"/><path d="M-50 430 C210 150 410 500 760 260 S980 95 1090 240"/></svg><span class="v5-feature-spark v5-feature-spark-one" aria-hidden="true">✧</span><span class="v5-feature-spark v5-feature-spark-two" aria-hidden="true">✳</span>
+<div class="v41-feature-content">
+<span class="v41-feature-label"><i></i> FROM RAW COMMENTS TO INSIGHT</span>
+<h2 id="v41-feature-title">不只是一个情绪分数。<br/><em>看见每种观点的差异。</em></h2>
+<p>从 8,523 条真实观点标注，走进多观点冲突、标签长尾与方面级误差的研究。</p>
+<a class="v41-feature-button" href="#/data">探索真实数据 <span aria-hidden="true">↗</span></a>
+</div>
+<div aria-label="真实数据摘要" class="v41-float-note"><span class="v41-note-dot"></span><strong>914</strong><small>多观点方面实例 · 已审核</small></div>
+<div class="v41-feature-foot">SIGHAN 2024 · TRAINING GROUP CV</div>
+</section>
+</section>
+<!-- PREDICT -->
+<section aria-labelledby="predict-title" class="page" data-page="predict" hidden="">
+<div class="v42-predict-scene" id="v42-predict-scene">
+<div aria-hidden="true" class="v42-predict-light"><i></i><i></i><i></i></div>
+
+
+<div class="predict-grid"><div class="v42-predict-left"><div class="page-heading v42-predict-heading"><span class="kicker">02 / PREDICTION STUDIO</span><h1 id="predict-title">输入一条评论，<br/>看见其中的<em>情绪。</em></h1><p>指定你关心的方面，用真实 BERT 模型观察愉悦度 V 与唤醒度 A 的细腻差异。</p></div><div class="predict-workflow-hint"><span class="workflow-hint-dot">01</span> 输入评论 <span class="hint-arrow">→</span><span class="workflow-hint-dot">02</span> 指定方面 <span class="hint-arrow">→</span><span class="workflow-hint-dot">03</span> 分析结果</div><section aria-label="评论输入区" class="studio-panel input-panel"><div class="panel-heading"><div><span class="panel-number">01 — INPUT</span><h2>评论输入</h2></div><button class="link-button" id="clear" type="button">清空 ↗</button></div>
+<form id="analysis-form"><div class="field-heading"><label for="comment">评论原文</label><span id="count">0 / 500</span></div><textarea id="comment" maxlength="500" placeholder="例如：汤非常难喝，但是服务很好。" rows="6"></textarea>
+<div class="field-heading"><label for="aspects">目标方面</label><span>最多 8 个</span></div><input autocomplete="off" id="aspects" placeholder="汤，服务" type="text"/><div aria-live="polite" class="tag-row" id="aspect-chips"></div><p class="helper">用逗号分隔；方面词需出现在原文中，或使用 NULL 表示隐式方面。</p>
+<span class="field-heading scenario-title">快速示例</span><div class="example-grid"><button data-example="0" type="button">有好有坏 ↗</button><button data-example="1" type="button">强烈好评 ↗</button><button data-example="2" type="button">隐含不满 ↗</button></div>
+<label class="compare-control"><input id="compare" type="checkbox"/><span><strong>对比历史实验候选</strong><small>展示数值差异，不代表候选模型更准确</small></span></label>
+<button class="submit-button" disabled="" id="analyze" type="submit"><span id="analyze-label">等待模型就绪</span><span class="submit-spinner" hidden="" id="submit-spinner"></span><span>↗</span></button><div class="form-error" hidden="" id="error" role="alert"></div><p class="privacy"><span class="live-dot"></span>仅本地推理 · 不上传评论 · 本页历史不持久化</p>
+</form>
+</section></div>
+
+<section aria-labelledby="result-title" class="studio-panel result-panel"><div class="panel-heading result-heading"><div><span class="panel-number">02 — EMOTION SPACE</span><h2 id="result-title">二维情绪图</h2></div><span class="result-time" id="result-time">V × A · 1—9</span></div>
+<div class="predict-empty v42-prediction-preview" id="prediction-empty">
+<div class="v42-preview-top"><span class="v42-preview-star">✧</span><strong>情绪坐标</strong><small>已核验的示例 · 非实时预测</small></div>
+<svg aria-label="已核验示例：服务 V 6.62 A 6.43，价格 V 4.23 A 5.08；请运行分析获取自己评论的结果" class="v42-sample-plot" role="img" viewbox="0 0 380 300">
+<defs><lineargradient id="v42-example-line" x1="0" x2="1" y1="1" y2="0"><stop offset="0" stop-color="#46c4b7"></stop><stop offset="1" stop-color="#7662ee"></stop></lineargradient></defs>
+<rect fill="#ffffff" fill-opacity=".21" height="218" rx="15" width="290" x="45" y="24"></rect>
+<path d="M45 242 H335 M45 242 V24 M190 24 V242 M45 133 H335" fill="none" stroke="#8890a8" stroke-dasharray="5 7" stroke-opacity=".45"></path>
+<path d="M118 24 V242 M263 24 V242 M45 78 H335 M45 188 H335" fill="none" stroke="#a2a8bc" stroke-opacity=".18"></path>
+<path class="v42-sample-curve" d="M162 130 Q198 88 249 93" fill="none" opacity=".72" stroke="url(#v42-example-line)" stroke-dasharray="7 8" stroke-linecap="round" stroke-width="2.8"></path>
+<circle class="v42-sample-halo" cx="162" cy="131" fill="#49c6b8" fill-opacity=".16" r="17"></circle><circle cx="162" cy="131" fill="#45bcaf" r="7" stroke="white" stroke-width="3"></circle>
+<circle class="v42-sample-halo" cx="249" cy="93" fill="#8270f4" fill-opacity=".18" r="19"></circle><circle cx="249" cy="93" fill="#7867e9" r="9" stroke="white" stroke-width="3"></circle>
+<text fill="#212437" font-size="14" font-weight="700" x="260" y="79">服务</text><text fill="#212437" font-size="14" font-weight="700" x="118" y="121">价格</text>
+<text fill="#5b6381" font-size="11" x="46" y="15">A · 唤醒度 ↑</text><text fill="#5b6381" font-size="11" text-anchor="end" x="335" y="267">V · 愉悦度 →</text>
+</svg>
+<div class="v42-preview-values"><span><i class="v42-dot purple"></i> 服务 <strong>6.62 / 6.43</strong></span><span><i class="v42-dot mint"></i> 价格 <strong>4.23 / 5.08</strong></span></div>
+<p>输入评论并点击「运行情绪分析」，这里将显示你自己的真实结果。</p>
+</div>
+<div hidden="" id="prediction-results">
+<div class="inline-alert" hidden="" id="stale-notice">输入已改变。请重新分析以更新结果。</div><div class="prediction-original"><span>正在分析的原文</span><p id="submitted-text"></p></div>
+<div class="result-chart" id="result-chart"></div><div class="chart-legend" id="chart-legend"></div><div class="chart-note">V：负面 → 正面　　A：平缓 → 强烈　　虚线 5 为量表中点，并非分类阈值</div>
+<div class="score-section-head"><h3>方面评分</h3><span>选择卡片可在图中定位</span></div><div class="new-score-grid" id="score-cards"></div>
+<div class="inline-alert" hidden="" id="candidate-notice"></div><div class="chart-note" id="warnings"></div>
+<details class="details"><summary>展开完整数值明细 <span>＋</span></summary><div class="table-wrap"><table><thead id="score-head"></thead><tbody id="score-body"></tbody></table></div></details>
+<div class="export-tools"><span>保留模型标识与预测时间</span><div><button id="export-csv" type="button">↓ CSV</button><button id="export-json" type="button">↓ JSON</button></div></div>
+<p class="chart-note">V/A 是回归分数，不是概率或置信度。自行输入的评论没有人工真值，不能计算准确率。</p>
+</div>
+</section>
+</div>
+</div><!-- /v42-predict-scene -->
+<section class="recent-panel" hidden="" id="history-section"><div class="panel-heading"><div><span class="panel-number">SESSION ONLY</span><h2>本页最近分析</h2></div><button class="link-button" id="clear-history" type="button">清空历史</button></div><div class="history-list" id="history"></div></section>
+</section>
+<!-- DATA -->
+<section aria-labelledby="data-title" class="page" data-page="data" hidden="">
+<div class="page-heading"><span class="kicker">03 / DATA INTELLIGENCE</span><h1 id="data-title">看见数据的<em>另一面。</em></h1><p>从原始观点标注到方面级误差，切换视角查看经过核验的统计。</p></div>
+<div class="data-masthead"><div><span>RAW ANNOTATIONS</span><strong>8,523</strong><p>原始观点标注</p></div><div><span>ASPECT INSTANCES</span><strong>7,476</strong><p>均值聚合后的训练实例</p></div><div><span>SENTENCES</span><strong>6,050</strong><p>原始训练评论句子</p></div></div>
+<div aria-label="数据探索维度" class="data-focus-nav" role="group">
+<button aria-pressed="true" class="active" data-data-focus="0" type="button">观点聚合 <span>01</span></button>
+<button aria-pressed="false" data-data-focus="1" type="button">情绪冲突 <span>02</span></button>
+<button aria-pressed="false" data-data-focus="2" type="button">极端标签 <span>03</span></button>
+</div>
+<div class="data-focus-panel" data-data-panel="0"><div class="focus-visual"><div class="focus-path"><span>原始观点 <b>8,523</b></span><i>→</i><span>方面实例 <b>7,476</b></span></div><div class="focus-note">914 组同方面多观点，聚合依据为任务标签规则；未删除训练句子。</div></div><div class="focus-side"><span>OPINION AGGREGATION</span><h3>从观点到方面</h3><p>同一目标可能被多次评价。V/A 均值聚合保留方面级监督，但压缩了多观点之间的差异。</p></div></div>
+<div class="data-focus-panel" data-data-panel="1" hidden=""><div class="focus-visual focus-bars"><div><span>单观点</span><i style="width:58.59%"></i><b>0.3046</b></div><div><span>正负混合</span><i style="width:89.36%"></i><b>0.4647</b></div><small>训练集 Seed 42 折外综合 MAE · 条形长度按同一基准缩放</small></div><div class="focus-side"><span>MIXED POLARITY</span><h3>矛盾情绪更难</h3><p>87 个正负混合方面的 V_MAE 为 0.5970，约为单观点的 2.13 倍；这是相关性分析，不代表因果。</p></div></div>
+<div class="data-focus-panel" data-data-panel="2" hidden=""><div class="focus-visual focus-longtail"><div><span>A ≥ 7.5</span><strong>78</strong><small>聚合方面实例</small></div><div><span>V &lt; 3</span><strong>34</strong><small>聚合方面实例</small></div></div><div class="focus-side"><span>LABEL SPARSITY</span><h3>真正稀缺的是极端标签</h3><p>这些样本数量较少。历史重加权方法对部分长尾样本有效，但整体误差未稳定改善。</p></div></div>
+<div class="data-layout"><article class="content-card"><div class="chart-header"><div><span class="kicker">OPINION STRUCTURE</span><h2>多观点不是少数噪声</h2></div><span class="tiny-label">N = 7,476</span></div><div class="donut-section"><div class="donut-wrap"><div class="donut"><div><strong>914</strong><span>多观点方面</span></div></div></div><div class="donut-legend"><div><i class="dot dot-ink"></i><span>单观点</span><strong>6,562 <small>87.8%</small></strong></div><div><i class="dot dot-blue"></i><span>多观点</span><strong>914 <small>12.2%</small></strong></div><p>相同句子、相同方面可能包含多个情绪观点。正式任务将同组 V/A 标签取平均。</p></div></div></article>
+<article class="content-card"><div class="chart-header"><div><span class="kicker">ERROR ANALYSIS</span><h2>观点冲突使 V 更难预测</h2></div><span class="tiny-label">BERT · SEED 42 CV</span></div><div class="error-bars" id="ambiguity-chart"></div><p class="footnote">综合 MAE，越低越好。不同子集彼此重叠，不能解释为因果关系。</p></article></div>
+<div class="wide-feature v44-dark-feature"><div class="feature-heading"><span class="kicker">DIFFICULT CASES</span><h2>真正的挑战，是情绪相互矛盾。</h2><p>在同一方面同时出现正面与负面观点时，单一标签难以完整表达。</p></div><div class="feature-metrics"><div><span>混合正负观点</span><strong>87</strong><small>方面实例</small></div><div><span>原始 BERT 的 V MAE</span><strong>0.597</strong><small>该子集</small></div><div><span>Opinion-Aware 的综合 MAE</span><strong>0.443</strong><small>探索性改善</small></div></div></div>
+<div class="data-footer-note">数据范围：Training 折外预测。这里的模型对比不是额外独立测试；实验结果详情请到「模型实验」。</div>
+</section>
+<!-- EXPERIMENTS -->
+<section aria-labelledby="experiments-title" class="page" data-page="experiments" hidden="">
+<div class="page-heading"><span class="kicker">04 / EXPERIMENT LAB</span><h1 id="experiments-title">让数字，而非<em>直觉。</em></h1><p>将交叉验证、官方 Validation 和探索性单种子实验分开展示。MAE 越低越好。</p></div>
+<div class="experiment-toolbar"><div aria-label="实验评价范围" class="segmented" role="group"><button aria-pressed="true" class="active" data-exp-scope="seeds" type="button">3 种子 CV</button><button aria-pressed="false" data-exp-scope="dev" type="button">官方 Dev</button><button aria-pressed="false" data-exp-scope="single" type="button">Seed 42 CV</button></div><span id="exp-scope-note">训练集 Group CV · 三种子平均 · 越低越好</span></div>
+<div class="exp-visual-grid">
+<article class="content-card exp-main"><div class="chart-header"><div><span class="kicker">MEAN ABSOLUTE ERROR</span><h2 id="exp-chart-title">模型表现比较</h2></div><div class="chart-small-badge">MAE ↓</div></div><div aria-live="polite" class="experiment-plot" id="experiment-plot"></div><div class="experiment-insight" id="experiment-insight"></div></article>
+<aside aria-label="研究结论数据卡" class="exp-insight-rail">
+<article class="exp-summary-card pastel-violet"><span class="exp-eyebrow">CV / LOWEST HISTORICAL VALUE</span><div class="exp-stat-top"><span class="exp-rail-icon">◈</span><strong>0.304790</strong></div><h3>Opinion-Aware v2</h3><p>三种子 CV 平均值；相较原始 BERT 改善 0.000741，但不能证明泛化更好。</p><div class="exp-mini-meter"><i style="width:70%"></i></div><small>原始 BERT · 0.305531</small></article>
+<article class="exp-summary-card pastel-peach"><span class="exp-eyebrow">OFFICIAL VALIDATION</span><div class="exp-stat-top"><span class="exp-rail-icon">✓</span><strong>0.306696</strong></div><h3>正式交付模型</h3><p>已有 Dev 验收中原始 BERT 优于其他候选，因此仍采用 Epoch 3 的 marked_l1。</p><div class="exp-rail-pill">BERT WWM Ext · Seed 42</div></article>
+
+<details class="v42-research-more"><summary>更多：观点冲突子集</summary><article class="exp-summary-card pastel-mint"><span class="exp-eyebrow">MIXED OPINIONS / N = 87</span><h3>正负观点冲突</h3><div class="exp-pair-metrics"><div><span>原始 BERT</span><b>0.4647</b></div><div><span>Opinion-Aware</span><b>0.4432</b></div></div><p>局部探索性改善，不是独立测试结论。</p></article></details></aside>
+</div>
+<details class="v42-experiment-details"><summary>展开研究解释与局部样本结果</summary><article class="content-card"><span class="kicker">OPINION CONFLICT</span><h2>模型局部收益</h2><p>正负观点混合样本（n = 87）</p><div class="two-model-bars"><div><span>原始 BERT</span><strong>0.4647</strong><i style="--bar:93%;--tone:#adb1bc"></i></div><div><span>Opinion-Aware</span><strong>0.4432</strong><i style="--bar:88.7%;--tone:#536dff"></i></div></div><small>该子集属于事后探索，不是独立性能检验。</small></article><article class="content-card"><span class="kicker">MODEL DECISION</span><h2>为什么仍选 BERT L1？</h2><p>在 3 种子 CV 中，部分方法仅略有改善；已有 Dev 验收并不支持替换正式模型。</p><div class="decision-strip"><span>正式交付模型</span><strong>Chinese BERT WWM Ext</strong><small>marked_l1 / Seed 42 / Epoch 3</small></div></article></details>
+<details class="details full-methods"><summary>查看完整实验比较表 <span>＋</span></summary><div class="table-wrap"><table><thead><tr><th>方法</th><th>评价范围</th><th>综合 MAE</th><th>说明</th></tr></thead><tbody id="experiment-table"></tbody></table></div></details>
+</section>
+<!-- STORY -->
+<section aria-labelledby="story-title" class="page story-page" data-page="story" hidden="">
+<div class="story-top"><div><span class="kicker">05 / RESEARCH STORY</span><h1 id="story-title">研究背后的四个章节</h1></div><span class="story-help">← → 翻页 · 支持触屏滑动</span></div>
+<div aria-live="polite" class="story-stage" id="story-stage" tabindex="0"><div class="story-slide" id="story-slide"></div><div class="story-progress-track"><div id="story-progress"></div></div><div class="story-pager"><div class="story-dots" id="story-dots" aria-label="研究展示分页"></div><span id="story-counter" aria-live="off">01 / 04</span></div><div class="story-control"><button aria-label="上一页" id="story-prev" type="button">←</button><button aria-label="下一页" id="story-next" type="button">→</button></div></div><p class="story-note">4 张固定画幅研究页，可使用方向键、按钮或触屏切换；数据来自已有实验记录。</p>
+</section>
+<!-- ABOUT -->
+<section aria-labelledby="about-title" class="page" data-page="about" hidden="">
+<div class="page-heading"><span class="kicker">06 / METHODS &amp; PROVENANCE</span><h1 id="about-title">让每一项结果，<em>可追溯。</em></h1><p>课程设计的模型、数据与实验约束说明。正式推理不需要外部网络。</p></div>
+<div class="about-flow"><div><span>01 / DATA</span><h3>SIGHAN 2024</h3><p>6,050 句、8,523 条观点，经方面聚合得到 7,476 条实例</p></div><div class="flow-arrow">→</div><div><span>02 / MODEL</span><h3>BERT + Aspect Marking</h3><p>中文 BERT WWM Ext，双回归头输出 V、A</p></div><div class="flow-arrow">→</div><div><span>03 / EVALUATION</span><h3>Group CV + Dev</h3><p>3 折冻结分组、独立复算、正式模型哈希确认</p></div></div>
+<div class="about-grid"><article class="content-card"><span class="kicker">DEPLOYMENT IDENTITY</span><h2>正式模型信息</h2><dl class="info-list"><div><dt>模型</dt><dd>Chinese BERT WWM Ext</dd></div><div><dt>方法</dt><dd>marked_l1</dd></div><div><dt>Seed</dt><dd>42</dd></div><div><dt>训练轮次</dt><dd>3</dd></div><div><dt>最大长度</dt><dd>128 tokens</dd></div><div><dt>Checkpoint SHA256</dt><dd id="model-hash">连接后获取</dd></div></dl></article><article class="content-card"><span class="kicker">EXPERIMENT INTEGRITY</span><h2>实验资料审计</h2><div class="audit-number">40 <small>/ 41</small></div><p>历史实验组完成预测文件审计。另有 3 组预测副本，不能当作独立实验。</p><div class="audit-pill">✓ 训练来源哈希匹配</div><div class="audit-pill">✓ 严格加载正式权重</div><div class="audit-pill">✓ HTTP 集成测试 22/22</div></article></div>
+<section class="api-showcase v5-api-showcase" aria-labelledby="v5-api-title">
+ <div class="v5-api-intro"><div class="v5-api-headline"><span class="kicker">LOCAL API / DEVELOPER WORKSPACE</span><h2 id="v5-api-title">让模型能力，<br/><em>清晰且可复现。</em></h2><p>一个可审计的本地推理接口。右侧展示与真实后端契约一致的请求结构；推理结果以实际 API 返回为准。</p></div>
+ <div class="v5-api-endpoints" aria-label="本地服务端点">
+  <div class="v5-api-endpoint"><span class="v5-endpoint-id">01</span><span class="v5-endpoint-icon">◎</span><div><strong>服务状态</strong><code>GET /api/status</code></div><span class="v5-endpoint-arrow">↗</span></div>
+  <div class="v5-api-endpoint"><span class="v5-endpoint-id">02</span><span class="v5-endpoint-icon">◇</span><div><strong>模型元信息</strong><code>GET /api/meta</code></div><span class="v5-endpoint-arrow">↗</span></div>
+  <div class="v5-api-endpoint v5-endpoint-featured"><span class="v5-endpoint-id">03</span><span class="v5-endpoint-icon">✳</span><div><strong>情绪预测</strong><code>POST /api/predict</code></div><span class="v5-endpoint-arrow">↗</span></div>
+ </div>
+ <div class="v5-api-tags"><span><i></i> 127.0.0.1 ONLY</span><span>本地推理</span><span>最大 8 个方面</span></div>
+ </div>
+ <div class="v5-dev-column">
+  <div class="api-console v5-dev-console">
+   <div class="v5-console-bar"><span class="v5-window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="v5-console-file" id="v5-code-title">request.json</span><span class="v5-method-pill">POST</span><span class="v5-console-path">/api/predict</span><button class="v5-copy" id="v5-copy" type="button" aria-label="复制当前代码">复制 <span aria-hidden="true">↗</span></button></div>
+   <div class="v5-code-tabs" role="tablist" aria-label="调用示例类型"><button role="tab" type="button" aria-selected="true" class="active" data-v5-code="json">JSON</button><button role="tab" type="button" aria-selected="false" data-v5-code="curl">cURL</button><button role="tab" type="button" aria-selected="false" data-v5-code="python">Python</button></div>
+   <pre class="v5-code-output" tabindex="0"><code id="v5-code-content" aria-live="polite"></code></pre>
+   <div class="v5-console-footer"><span>令牌来源：<code>GET /api/meta</code></span><span class="v5-local-indicator"><i></i> LOCAL</span></div>
+  </div>
+  <div class="v5-api-spec"><div class="v5-api-spec-head"><span>REQUEST CONTRACT</span><span>真实后端字段</span></div><div class="v5-api-spec-grid"><div><code>text</code><small>string · 评论原文</small></div><div><code>aspects</code><small>string[] · 1–8 个方面</small></div><div><code>compare</code><small>boolean · 是否对比</small></div><div><code>X-Demo-Token</code><small>header · 会话令牌</small></div></div></div>
+ </div>
+ <div class="v5-api-route" aria-label="推理请求处理流程"><div><span>01</span><strong>评论输入</strong><small>text + aspects</small></div><i aria-hidden="true"></i><div><span>02</span><strong>本地 API</strong><small>token 校验</small></div><i aria-hidden="true"></i><div><span>03</span><strong>BERT 模型</strong><small>marked_l1</small></div><i aria-hidden="true"></i><div><span>04</span><strong>V × A</strong><small>实际 JSON 结果</small></div></div>
+</section>
+<div class="about-warning"><span>IMPORTANT</span><p>官方 Test 曾在历史研究中被查看，因此历史 Test 比较只作探索性分析。某些结果的 A 高分阈值为 ≥6.5，最新长尾审计采用 ≥7.5，不混合统计口径。</p></div>
+</section>
+</main>
+<footer class="app-footer"><span>© 观感 · GUANGAN STUDIO / V5.0</span><span>LOCAL FIRST <i>·</i> DIMENSIONAL ASPECT SENTIMENT</span></footer>
+</div>
+</div>
+<div class="toast" hidden="" id="toast" role="status"></div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+﻿split,sentence_ids,unique_review_ids,aspect_instances,unique_aspects,null_aspects,blank_sentences,blank_aspects,missing_labels,invalid_V,invalid_A,duplicate_id_aspect,duplicate_text_aspect,multi_aspect_sentences,multi_aspect_instances,A_ge_6_5,A_ge_7_5
+train,6050,1752,7476,3424,150,0,0,0,0,0,0,27,1180,2606,1231,78
+dev,100,34,115,104,0,0,0,0,0,0,0,0,15,30,31,2
+test,2000,895,2658,1526,0,0,0,0,0,0,0,0,540,1198,407,19

@@ -1,0 +1,33 @@
+{
+  "discovered_groups": 41,
+  "verified_groups": 40,
+  "incomplete_or_failed": 1,
+  "identical_prediction_copies": [
+    {
+      "copy": "backbone_v1\\macbert\\training_v2\\marked_l1\\seed_42",
+      "same_predictions_as": "backbone_comparison_v1\\macbert_debug\\training_v2\\marked_l1\\seed_42"
+    },
+    {
+      "copy": "backbone_v1\\roberta\\training_v2\\marked_l1\\seed_42",
+      "same_predictions_as": "backbone_comparison_v1\\roberta\\training_v2\\marked_l1\\seed_42"
+    },
+    {
+      "copy": "s2t_lds_v1_anchor_fixed\\training_v2\\s2t_augment\\seed_42",
+      "same_predictions_as": "s2t_lds_v1\\training_v2\\s2t_augment\\seed_42"
+    }
+  ],
+  "issues": [
+    {
+      "experiment": "backbone_comparison_v1\\macbert\\training_v2\\marked_l1\\seed_42",
+      "reason": "missing folds [0, 1, 2]"
+    }
+  ],
+  "expected_samples": {
+    "all": 7476,
+    "multi_aspect": 2606,
+    "A_ge_7_5": 78,
+    "V_lt_3": 34
+  },
+  "scope": "Training Group CV only",
+  "official_dev_test_recomputed": false
+}

@@ -1,0 +1,5 @@
+﻿metric,baseline_minus_candidate_positive_is_better,cluster_bootstrap_95CI_low,cluster_bootstrap_95CI_high,n_review_connected_groups,n_resamples,evidence_type
+V_MAE,-0.00211632780453005,-0.005011416429973962,0.0006956350478013185,1726,3000,existing single-seed OOF paired group bootstrap; not independent multi-seed experiment
+A_MAE,0.001502363117531652,-0.0005797110269197982,0.003440435310874393,1726,3000,existing single-seed OOF paired group bootstrap; not independent multi-seed experiment
+mean_MAE,-0.00030698234349919905,-0.002319559690828663,0.0015850137554830061,1726,3000,existing single-seed OOF paired group bootstrap; not independent multi-seed experiment
+high_A_MAE,9.748172217708034e-05,-0.005945338869382231,0.005977214064240245,1726,3000,existing single-seed OOF paired group bootstrap; not independent multi-seed experiment

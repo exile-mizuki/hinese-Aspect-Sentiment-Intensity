@@ -1,0 +1,26 @@
+{
+  "method": "marked_l1",
+  "seed": 42,
+  "split": "Validation",
+  "training_source": "Train only",
+  "checkpoint_loaded_from_disk": true,
+  "deployment_approved": false,
+  "note": "Development already used in earlier project iterations; this is exploratory, not an untouched test.",
+  "metrics": {
+    "n": 115,
+    "V_MAE": 0.28556521739130436,
+    "A_MAE": 0.32782608695652177,
+    "mean_MAE": 0.3066956521739131,
+    "high_A_n": 31,
+    "high_A_MAE": 0.3638709677419355,
+    "V_PCC": 0.9484150026049905,
+    "A_PCC": 0.850877522405991
+  },
+  "official_task1_metrics": {
+    "Valance MAE": 0.28556521739130436,
+    "Valance PCC": 0.9484150026049909,
+    "Arousal MAE": 0.32782608695652177,
+    "Arousal PCC": 0.8508775224059913
+  },
+  "checkpoint_sha256": "f5f6d521aaa97635c1af0520af8bf6c61c586418ab4c4bffffba0819b8a96158"
+}

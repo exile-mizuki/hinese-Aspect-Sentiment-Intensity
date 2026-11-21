@@ -1,0 +1,8 @@
+{
+  "seed": 20261120,
+  "iterations": 3000,
+  "groups": 1726,
+  "validation_data": "saved OOF train predictions only",
+  "interpretation": "Descriptive paired uncertainty; overlapping CV training sets and one training seed limit inference. No proof of significant model improvement.",
+  "test_used": false
+}

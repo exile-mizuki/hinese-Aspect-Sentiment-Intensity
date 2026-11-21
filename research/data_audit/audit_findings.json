@@ -1,0 +1,13 @@
+{
+  "raw_annotations": 8523,
+  "aggregated_train_instances": 7476,
+  "multi_opinion_groups": 914,
+  "multi_opinion_groups_with_different_ratings": 800,
+  "duplicate_text_aspect_groups_across_training_IDs": 22,
+  "duplicate_text_aspect_groups_label_differences": 22,
+  "cross_split_near_duplicate_candidates": 0,
+  "review_count_existing": 24,
+  "review_count_new_oof": 24,
+  "source_original_untouched": true,
+  "warning": "Official test labels and scores were examined in earlier experiments. No fresh blind-test performance claim permitted."
+}
